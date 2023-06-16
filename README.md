@@ -33,7 +33,8 @@
 
 
 
-![first](https://github.com/sergiosoftdev/Global-Data/assets/69803283/62829f1d-7ee5-4de8-8709-496093a66e79)
+![images](https://github.com/sergiosoftdev/GlobalData/assets/69803283/eed65a5e-e860-45f8-bde3-499d565e90fe)
+
 
 
 
@@ -44,7 +45,8 @@
 
 
 
-![second](https://github.com/sergiosoftdev/Global-Data/assets/69803283/919b2cf3-b72c-4ca4-821f-2999f35bfcea)
+
+![images2](https://github.com/sergiosoftdev/GlobalData/assets/69803283/6ee29945-8f3c-4b32-9d08-8994e21fb552)
 
 
 
@@ -55,7 +57,8 @@
 
 
 
-![third](https://github.com/sergiosoftdev/Global-Data/assets/69803283/34dd805f-b34d-46d3-8f1c-6bb8fbc7a164)
+![images3](https://github.com/sergiosoftdev/GlobalData/assets/69803283/6f28baeb-da12-4c79-a16c-7ec51045c0f5)
+
 
 
 
@@ -66,13 +69,14 @@ By clicking on Finish you will get the following **graph**! That you can **save*
 
 
 
-![graph](https://github.com/sergiosoftdev/Global-Data/assets/69803283/2af700b0-a483-4eaa-8b30-e48c1fc9dba4)
+![images4](https://github.com/sergiosoftdev/GlobalData/assets/69803283/151ab105-ebe8-452a-93e7-ffd269209386)
 
 
 
 
+![images5](https://github.com/sergiosoftdev/GlobalData/assets/69803283/4dc19281-a0a8-4913-959d-110d79e83a48)
 
-![graph](https://github.com/sergiosoftdev/Global-Data/assets/69803283/75b8b1cd-0dc4-4998-be2b-708b44288dd7)
+
 
 
 ## Where does the data come from?
