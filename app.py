@@ -103,20 +103,21 @@ def results():
     if request.method == "GET":
 
         data = session["data"]
+        data = data[0]
 
-        datakeys = list(data[0].keys())[4:]
+        newdata = {}
+
+        for key, value in data.items():
+            if value is not None:
+                newdata[key] = value
+
+        datakeys = list(newdata.keys())[4:]
         datakeys = [int(i) for i in datakeys]
 
-        datavalues = []
+        datavalues = list(newdata.values())[4:]
 
-        for i, x in enumerate(list(data[0].values())):
 
-            if x == None:
-                pass
-            else:
-                datavalues.append(x)
-
-        return render_template("/results.html", data=data, datakeys=datakeys, datavalues=datavalues[4:])
+        return render_template("/results.html", data=newdata, datakeys=datakeys, datavalues=datavalues)
 
 
 
