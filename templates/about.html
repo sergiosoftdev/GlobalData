@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+{% block nav %}
+
+<nav class="navbar">
+
+  <h1><a class="" style="" href="/">Global Data</a></h1>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navlist" id="">
+    <ul class="">
+      <li class="" id="home">
+        <a class="" href="/">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="" id="about">
+        <a class="" href="/about">About</a>
+      </li>
+      <form action="/trycountries">
+
+        <button type="submit" id="try">Try It</button>
+
+      </form>
+    </ul>
+    </form>
+  </div>
+
+</nav>
+{% endblock %}
+
+<main>
+
+    <section class="aboutsection">
+
+        <span class="aboutitle"><h1>What's <b style="color: #5e43f3;">Global </b>Data;</h1></span>
+
+        <span class="aboutdesc">
+
+            <p><b style="color: #5e43f3;">Global Data</b> dolor sit amet, consectetur adipiscing elit. <b>Vestibulum pellentesque</b> condimentum ex, ut consequat sem consequat iaculis.
+                Quisque id nunc eu ante pellentesque fermentum. Donec eget arcu et nisi gravida condimentum eget vitae metus.
+                </p>
+
+        </span>
+
+    </section>
+
+    <span class="aboutdescportrait">
+
+      <p><b style="color: #5e43f3;">Global Data</b> dolor sit amet, consectetur adipiscing elit. <b style="color: #5e43f3;">Vestibulum pellentesque</b> condimentum ex, ut consequat sem consequat iaculis.
+        Quisque id nunc eu ante pellentesque fermentum. Donec eget arcu et nisi gravida condimentum eget vitae metus.
+        </p>
+
+    </span>
+
+</main>
+
+{% endblock %}

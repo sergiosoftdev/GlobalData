@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% block nav %}
+
+<nav class="navbar">
+
+  <h1><a class="" style="" href="/">Global Data</a></h1>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navlist" id="">
+    <ul class="">
+      <li class="" id="home">
+        <a class="" href="/">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="" id="about">
+        <a class="" href="/about">About</a>
+      </li>
+      <form action="/trycountries">
+
+        <button type="submit" id="try">Try It</button>
+
+      </form>
+    </ul>
+    </form>
+  </div>
+
+</nav>
+{% endblock %}
+
+<main>
+
+  <section class="firstsection">
+
+    <span class="spanfirstsection">
+
+      <span class="fheading">
+
+        <h1>Navigate through the largest <b style="color: #5e43f3;">World Data</b> Database</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat est at leo fermentum, eget consequat erat luctus. Proin dui velit, viverra sodales nibh et, sagittis lacinia ex.
+          Pellentesque dapibus ultrices efficitur. Nulla facilisi. Nulla facilisi. Pellentesque vel ante et lectus tempor ullamcorper nec ut lorem. Phasellus nec dictum purus.
+          Aenean elementum orci sed quam finibus finibus. Cras in odio a risus vestibulum tincidunt. Nullam at posuere est. Aliquam quis tellus mi. Vivamus nec ipsum id massa aliquet mollis et eu odio.
+          Ut vestibulum iaculis sagittis. Curabitur hendrerit malesuada nibh eget ultrices.</p>
+
+      </span>
+
+      <span class="fdash">
+
+          <canvas  id="fdash">
+
+            <script>
+
+              var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "Germany", "Venezuela"];
+              var yValues = [55, 49, 44, 37, 43, 34, 54];
+              var barColors = [
+                "#7a5af5",
+              ];
+
+              const fdash = document.getElementById("fdash").getContext("2d");
+              const bgGradient = fdash.createLinearGradient(0, 0, 0, 400);
+
+              bgGradient.addColorStop(0,"rgba(122, 90, 245, 1)")
+              bgGradient.addColorStop(1,"rgba(122, 90, 245, 0.02)")
+
+              new Chart(fdash, {
+
+                type: "line",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    data: yValues,
+                    backgroundColor: bgGradient,
+                    borderColor: ['#7a5af5'],
+                    fill: true,
+                    color: ['#fffffff']
+                  }]
+                },
+
+                options: {
+                  title: {
+                    display: true,
+                    text: "World Wide Wine Production",
+                  },
+
+                  plugins: {
+                    legend: {
+                      labels: {
+                        font: {
+                          color: "#ffffff"
+                        }
+                      },
+                      display: false
+                    }
+                  },
+
+                  responsive: true,
+
+                  layout: {
+                      padding: 80
+                  },
+
+                  maintainAspectRatio: true,
+
+                }
+              });
+
+            </script>
+
+          </canvas>
+
+      </span>
+
+      <span class="fbutton">
+
+        <form action="/trycountries">
+
+          <button type="submit" id="try">Try It</button>
+
+        </form>
+      </span>
+
+    </span>
+
+  </section>
+
+</main>
+
+{% endblock %}

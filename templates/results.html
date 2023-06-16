@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <nav class="resultsnav">
+
+        <nav class="resultsnavcontainer">
+
+            <nav class="datacontent">
+
+                <p>{{ data }}</p>
+
+            </nav>
+
+            <span class="fdash">
+
+                <canvas  id="fdash">
+
+                  <script>
+
+                    console.log({{ datakeys }})
+
+                    var xValues = {{ datakeys }};
+                    var yValues = {{ datavalues }};
+                    var barColors = [
+                      "#7a5af5",
+                    ];
+
+                    const fdash = document.getElementById("fdash").getContext("2d");
+                    const bgGradient = fdash.createLinearGradient(0, 0, 0, 400);
+
+                    bgGradient.addColorStop(0,"rgba(122, 90, 245, 1)")
+                    bgGradient.addColorStop(1,"rgba(122, 90, 245, 0.02)")
+
+                    new Chart(fdash, {
+
+                      type: "line",
+                      data: {
+                        labels: xValues,
+                        datasets: [{
+                          data: yValues,
+                          backgroundColor: bgGradient,
+                          borderColor: ['#7a5af5'],
+                          fill: true,
+                          color: ['#fffffff']
+                        }]
+                      },
+
+                      options: {
+                        title: {
+                          display: true,
+                          text: "World Wide Wine Production",
+                        },
+
+                        plugins: {
+                          legend: {
+                            labels: {
+                              font: {
+                                color: "#ffffff"
+                              }
+                            },
+                            display: false
+                          }
+                        },
+
+                        responsive: true,
+
+                        layout: {
+                            padding: 80
+                        },
+
+                        maintainAspectRatio: true,
+
+                        layout: {
+                            padding: 50
+                        }
+
+                      }
+                    });
+
+                  </script>
+
+                </canvas>
+
+            </span>
+
+        </nav>
+
+    </nav>
+
+{% endblock %}

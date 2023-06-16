@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <span class="trybackground">
+
+        <span class="tryformcontainer">
+
+            <h1>Select Country:</h1>
+
+            <nav id="tryformcontainer">
+
+                <form method="POST" action="/trycountries">
+
+                    <select name="selectedcountry">
+
+                        {% for i in countries %}
+
+                            <option>{{ i }}</option>
+
+
+                        {% endfor %}
+
+                    </select>
+
+                    <nav class="submitbutton">
+
+                        <button type="submit">Next</button>
+
+                    </nav>
+
+                </form>
+
+            </nav>
+
+        </span>
+
+    </span>
+
+{% endblock %}
