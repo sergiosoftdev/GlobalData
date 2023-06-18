@@ -1,5 +1,5 @@
 # Global Data
-**Link:** https://global-data.onrender.com. (It could take some time to load the page due to slow host services).
+**Link:** https://globaldata.onrender.com. (It could take some time to load the page due to slow host services).
 
 ## What's Global Data
 
