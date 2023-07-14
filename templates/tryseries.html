@@ -1,40 +1,25 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block body %}
 
-{% block body %}
+<span class="trybackground">
+  <span class="tryformcontainer glassycontainer">
+    <h1>Select Series:</h1>
 
-    <span class="trybackground">
+    <nav id="tryformcontainer">
+      <form method="POST" action="/tryseries">
+        <select name="selectedseries">
+          {% for i in series %}
 
-        <span class="tryformcontainer">
+          <option>{{ i }}</option>
 
-            <h1>Select Series:</h1>
+          {% endfor %}
+        </select>
 
-            <nav id="tryformcontainer">
-
-                <form method="POST" action="/tryseries">
-
-                    <select name="selectedseries">
-
-                        {% for i in series %}
-
-                            <option>{{ i }}</option>
-
-
-                        {% endfor %}
-
-                    </select>
-
-                    <nav class="submitbutton">
-
-                        <button type="submit">Finish</button>
-
-                    </nav>
-
-                </form>
-
-            </nav>
-
-        </span>
-
-    </span>
+        <nav class="submitbutton">
+          <button type="submit">Finish</button>
+        </nav>
+      </form>
+    </nav>
+  </span>
+</span>
 
 {% endblock %}

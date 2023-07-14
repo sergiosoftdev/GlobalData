@@ -1,12 +1,23 @@
-@keyframes fadeInLeft {
-    0% { opacity: 0; transform: translateX(-5rem);}
-    100% { opacity: 1; transform: translateX(0);}
-  }
+:root{
 
-@keyframes fadeInBottom {
-0% { opacity: 0; transform: translateY(-5rem);}
-100% { opacity: 1; transform: translateY(0);}
+    --headingsize: 30px;
+    --listing-and-button-size: 15px;
+    --button-width: 120px;
+    --button-height: 40px;
+    --about-height: 700px;
+
 }
+
+@keyframes opacityan {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+    }
+
+@keyframes opacityearth {
+    0% { opacity: 0;}
+    50%{ opacity: 0; }
+    100% { opacity: 1;}
+    }
 
 @font-face {
     font-family: 'Montserrat';
@@ -48,10 +59,21 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 
+html{
+
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+    width: 100dvw;
+
+}
+
 body{
 
     margin: 0;
     padding: 0;
+
+    width: 100dvw;
 
     background-color: #121212;
 }
@@ -79,18 +101,132 @@ button{
 
 }
 
+.earthcontainer{
+
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    z-index: -1;
+    
+    opacity: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.earthbehindobject{
+
+    position: absolute; 
+    opacity: 60%; 
+    z-index: -2; 
+    background-color: #5e43f3; 
+    border-radius: 50%; 
+    filter: blur(50px);
+    width: 500px; 
+    height: 500px;
+
+}
+
+.earthcontainerresults{
+
+    overflow: hidden;
+
+    position: absolute; 
+    width: 100dvw; 
+    height: 100dvh; 
+
+    left: 30dvw;
+
+    z-index: -1;
+    
+    opacity: 25%;
+
+    display: flex;
+
+    align-items: center;
+
+    & #earth{
+
+        width: 150dvh; 
+        height: 150dvh;     
+
+    }
+
+}
+
+.earthbehindobjectresults{
+
+    overflow: hidden;
+
+    left: 30dvw;
+
+    position: absolute; 
+    opacity: 30%; 
+    z-index: -2; 
+    background-color: #5e43f3; 
+    border-radius: 50%; 
+    filter: blur(50px);
+    width: 150dvh; 
+    height: 150dvh; 
+
+}
+
+
+.glassycontainer{
+
+    background: rgba( 255, 255, 255, 0.02 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    -webkit-box-shadow: 0px 0px 65px -28px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 65px -28px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 65px -28px rgba(66, 68, 90, 1);
+
+    transition: .5s;
+
+}
+
+.glassycontainer:hover{
+
+    background: rgba( 255, 255, 255, 0.05 );
+
+}
+
 .navbar{
 
-    margin-bottom: 10dvh;
-
-    background-color: #121212;
-    height: 15dvh;
+    background-color: transparent;
+    height: 150px;
     max-width: 100%;
+
+    margin-bottom: 20px;
 
     display: flex;
 
     flex-flow: column wrap;
     align-content: space-between;
+
+}
+
+.navbarresults{
+
+    background-color: transparent;
+    height: 80px;
+    max-width: 100%;
+
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    display: flex;
+
+    flex-flow: column wrap;
+    align-content: space-between;
+
+    padding-left: 20px;
+    padding-right: 20px;
 
 }
 
@@ -106,20 +242,66 @@ button{
 
 }
 
-.navbar h1{
+.navbarresults h1{
 
-    font-size: 5dvh;
-    padding-left: 4dvh;
+    font-size: var(--headingsize);
     font-weight: bold;
     color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 
     transition: 0.5s ease-out;
 
 }
 
-.navbar h1:hover{
+.navbarresults h1 a{
 
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+    transition: 0.5s ease-out;
+
+}
+
+.navbarresults h1 a:hover{
+
+    color: #5e43f3;
     transform: translateY(-0.5rem);
+
+}
+
+.navbar h1{
+
+    font-size: var(--headingsize);
+    font-weight: bold;
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+
+    transition: 0.5s ease-out;
 
 }
 
@@ -133,16 +315,16 @@ button{
 
 }
 
-.navbar h1:hover a{
+.navbar h1 a:hover{
 
     color: #5e43f3;
+    transform: translateY(-0.5rem);
 
 }
 
 .navlist{
 
     display: flex;
-    padding-right: 3dvh;
 
     height: 100%;
 
@@ -166,8 +348,8 @@ button{
 
 .navlist ul li{
 
-    margin-right: 5dvh;
-    font-size: 2dvh;
+    margin-right: 50px;
+    font-size: var(--listing-and-button-size);
     transition: 0.5s;
     list-style: none;
 
@@ -248,40 +430,69 @@ button{
 
 }
 
-#responsivemenu{
+.absoluteobjects{
 
-    display: none;
+    position: absolute;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+#absolute1{
+
+    position: absolute;
+
+    height: 50dvw;
+    width: 50dvw;
+
+    background-color: #5e43f3;
+
+    opacity: 10%;
+
+    filter: blur(100px);
+
+    left: -10dvw;
+    top: -25dvw;
+    border-radius: 50%;
+
+}
+
+#absolute2{
+
+    position:absolute;
+
+    height: 40dvw;
+    width: 40dvw;
+
+    background-color: #5e43f3;
+
+    border-radius: 50%;
+
+    top: 115dvh;
+    left: 30dvw;
+
+    z-index: -3;
+
+    opacity: 15%;
 
 }
 
 .firstsection{
 
-    background-color: #2f2b3a;
-
-
-    width: 70%;
-
-    border-radius: 2dvh;
-
+    width: 1200px;
     margin: 0 auto;
-
     transition: 0.5s;
-
     animation: fadeInBottom 1s;
-
-}
-
-.firstsection:hover{
-
-    transform: translateY(-5dvh);
 
 }
 
 .spanfirtsection{
 
     max-width: 100%;
+    height: 100%;
     max-height: 100%;
-
     display: flex;
 
 }
@@ -297,38 +508,14 @@ button{
 .fheading h1{
 
     color: white;
-    font-size: 8dvh;
-    padding-left: 2dvw;
-    padding-top: 4dvh;
-    padding-right: 2dvw;
-    padding-bottom: 4dvh;
+    font-size: 80px;
 
     text-align: center;
     text-justify: inter-word;
 
     margin-block-start:0em;
     margin-block-end: 0em;
-
-}
-
-.fheading p{
-
-    color: #8b8b8b;
-
-    margin-top: -10dvh;
-    font-size: 2dvh;
-
-    padding-left: 2dvw;
-    padding-right: 2dvw;
-
-    text-align: center;
-    text-justify: inter-word;
-
-    display: block;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-bottom: 50px;
 
 }
 
@@ -339,6 +526,8 @@ button{
     justify-content: center;
     align-items: center;
 
+    gap: 20px;
+
 }
 
 #try{
@@ -346,16 +535,16 @@ button{
     background-color: #5e43f3;
     color: white;
 
-    height: 5dvh;
-    width: 7dvw;
+    height: var(--button-height);
+    width: var(--button-width);
     border: none;
 
-    font-size: 2dvh;
+    font-size: var(--listing-and-button-size);
     font-weight: bold;
 
     border-radius: 1dvh;
 
-    transition: .05s ease-in-out;
+    transition: .4s ease-in-out;
 
     cursor: pointer;
 
@@ -363,10 +552,37 @@ button{
 
 #try:hover{
 
-    outline: 3px white solid;
+    background-color: white;
+    color: black;
     cursor: pointer;
 }
 
+#tryabout{
+
+    background-color: transparent;
+    color: white;
+
+    outline: 2px #fff solid;
+
+    height: var(--button-height);
+    width: var(--button-width);
+    border: none;
+
+    font-size: var(--listing-and-button-size);
+    font-weight: bold;
+
+    border-radius: 1dvh;
+
+    transition: .4s ease-in-out;
+
+}
+
+#tryabout:hover{
+
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
 
 
 
@@ -378,12 +594,21 @@ button{
 .aboutsection{
 
     margin: 0 auto;
+    height: 700px;
 
     display: flex;
-    width: 70%;
-    padding: 5dvh;
+    width: 100%;
 
-    margin-top: -8dvh;
+}
+
+.aboutsectioncontainer{
+
+    margin: 0 auto;
+
+    display: flex;
+    width: 100%;
+
+    gap: 100px;
 
 }
 
@@ -391,31 +616,44 @@ button{
 
     display: flex;
 
+    width: 50%;
+
     align-items: center;
     justify-content: center;
-
-    margin-right: 5dvw;
 
 }
 
 .aboutitle h1{
 
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
     color: white;
-    font-size: 9dvw;
+    font-size: 150px;
     margin-block-start: 0em;
     margin-block-end: 0em;
+
+    text-align: left;
 
     animation: fadeInLeft 3s;
 }
 
 .aboutdesc{
 
-    border-radius: 2dvh;
-    padding: 4dvh;
+    border-radius: 20px;
 
-    width: 80dvw;
+    width: 50%;
 
-    background-color: #2f2b3a;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
 
 }
 
@@ -423,9 +661,19 @@ button{
 
     color: white;
 
-    font-size: 2dvw;
+    border-radius: 24px;
 
-    text-align: justify;
+    -webkit-box-shadow: 0px 0px 65px -28px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 65px -28px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 65px -28px rgba(66, 68, 90, 1);
+
+    background: rgba( 18, 18, 18, 0.4 );
+
+    padding: 40px;
+
+    font-size: var(--headingsize);
+
+    text-align: left;
 
     max-width: 100%;
     max-height: 100%;
@@ -467,7 +715,6 @@ button{
 
     width: 40dvw;
     height: 10dvh;
-    background-color: #2f2b3a;
 
     margin-top: -10dvh;
 
@@ -475,7 +722,9 @@ button{
 
     padding: 5dvh;
 
-    animation: fadeInLeft 3s;
+    animation: opacityan 3s;
+
+
 
 }
 
@@ -510,6 +759,8 @@ button{
 
     justify-content: center;
     align-items: flex-end;
+
+    animation: fadeInLeft 3s;
 
 
 }
@@ -547,8 +798,7 @@ button{
 /* RESULTS NAVS */
 
 .resultsnav{
-
-    height: 100%;
+    height: calc(100% / 1.5);
     max-width: 100%;
 
     display: flex;
@@ -559,14 +809,12 @@ button{
 
 .resultsnavcontainer{
 
-    height: 70dvh;
-    width: 70dvw;
-
-    padding: 2dvh 1dvw 2dvh 1dvw;
+    height: 100%;
+    width: 100%;
 
     border-radius: 1dvh;
 
-    background-color: #2f2b3a;
+    margin-bottom: 20px;
 
     animation: fadeInLeft 3s;
 
@@ -575,7 +823,6 @@ button{
 .datacontent{
 
     background-color: #1a1625;
-    padding: 2dvh 1dvw 2dvh 1dvw;
     border-radius: 1dvh;
 
 }
@@ -601,7 +848,9 @@ button{
     align-items: center;
 
     max-width: 100%;
-    max-height: 80%;
+    max-height: 100%;
+
+    transition: 0.6s;
 
 
     display: flex;
@@ -610,168 +859,423 @@ button{
 
 
 
-/* MEDIA QUERYS FOR PHONES */
+/* Smartphones start somewhere around here */
+@media (min-width: 300px) {
 
-@media screen
- and (orientation: portrait)
-{
+    :root{
 
-    .firstsection{
+        --headingsize: 20px;
+        --listing-and-button-size: 10px;
+        --button-height: 30px;
+        --button-width: 70px;
+        --first-section-width: 300px;
+    
+    }
 
-        display: block;
-        margin-top: 5dvh;
-        width: 80dvw;
+    .navbar{
+
+        height: 100px;
 
     }
 
-    .fheading{
+    .firstsection{
 
-        display: block;
+        width: var(--first-section-width);
 
     }
 
     .fheading h1{
 
-        font-size: 7dvw;
-        padding-left: 2dvh;
-        padding-top: 4dvw;
-        padding-right: 2dvh;
+        font-size: 25px;
 
     }
 
-    .fheading p{
+    .navlist ul li {
 
-        font-size: 3dvw;
-        padding-left: 2dvh;
-        padding-top: 4dvw;
-        padding-right: 2dvh;
+        margin-right: 10px;
 
     }
 
-    #try{
+    .aboutsection {
 
-        height: 4dvh;
-        width: 20dvw;
-        font-size: 4dvw;
+        height: 300px;
+
+    }
+
+    .aboutitle h1 {
+
+        font-size: 30px;
+
+    }
+
+    
+    .aboutsectioncontainer {
+
+        gap: 10px;
+
+    }
+
+    .aboutdesc p {
+
+        font-size: 10px;
+
+    }
+
+    .earthcontainer{
+
+        height: var(--about-height);
+        width: var(--first-section-width);
+        justify-content: center;
+
+    }
+
+    #earth{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+
+    }
+
+    .earthbehindobject{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+        justify-content: center;
+
+    }
+    
+    
+}
+
+/* You might do landscape phones here if your content seems to need it */
+@media (min-width: 450px) {
+
+    :root{
+
+        --about-height: 300px;
+        --earth-behind-object: 200px;
+        --first-section-width: 380px;
+    
+    }
+
+    .firstsection{
+
+        width: var(--first-section-width);
+
+    }
+
+    .earthcontainer{
+
+        height: var(--about-height);
+        width: var(--first-section-width);
+        justify-content: center;
+
+    }
+
+    #earth{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+
+    }
+
+    .earthbehindobject{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+        justify-content: center;
+
+    }
+
+}
+
+/* Starting into tablets somewhere in here */
+@media (min-width: 600px) {
+
+    :root{
+
+        --about-height: 300px;
+        --earth-behind-object: 200px;
+        --first-section-width: 580px;
+    
+    }
+
+    .firstsection{
+
+        width: var(--first-section-width);
+
+    }
+
+    .earthcontainer{
+
+        height: var(--about-height);
+        width: var(--first-section-width);
+        justify-content: center;
+
+    }
+
+    #earth{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+
+    }
+
+    .earthbehindobject{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+        justify-content: center;
+
+    }
+
+}
+
+/* Perhaps bigger tablets */
+@media (min-width: 750px) {
+
+    :root{
+
+        --about-height: 300px;
+        --earth-behind-object: 200px;
+        --first-section-width: 650px;
+    
+    }
+
+    .firstsection{
+
+        width: var(--first-section-width);
+
+    }
+
+    .earthcontainer{
+
+        height: var(--about-height);
+        width: var(--first-section-width);
+        justify-content: center;
+
+    }
+
+    #earth{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+
+    }
+
+    .earthbehindobject{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+        justify-content: center;
+
+    }
+
+
+}
+
+/* Desktop screen or landscape tablet */
+@media (min-width: 900px) {
+
+    :root{
+
+        --headingsize: 30px;
+        --listing-and-button-size: 15px;
+        --button-height: 40px;
+        --button-width: 90px;
+        --about-height: 500px;
+        --earth-behind-object: 300px;
+        --first-section-width: 720px;
+    
+    }
+
+    .firstsection{
+
+        width: var(--first-section-width);
 
     }
 
     .navbar{
 
-        margin-top: 5dvh;
-
-        margin-bottom: 10dvh;
-        height: 8dvh;
+        height: 125px;
 
     }
 
-   .navlist {
+    .fheading h1{
 
-    padding-right: 0;
-    grid-row: 2;
-    grid-column: 2 / 3;
+        font-size: 50px;
 
-   }
+    }
 
-   .aboutsection{
+    .navlist ul li {
 
-        margin-top: 0;
+        margin-right: 30px;
 
-   }
+    }
 
-   .aboutitle h1{
+    .aboutsection {
 
-        text-align: center;
-        font-size: 12dvw;
+        height: var(--about-height);
 
-   }
+    }
 
-   .aboutdesc{
+    .aboutdesc p {
 
-        display: none;
-        padding: 5dvw;
-        text-align: center;
+        font-size: 20px;
+        
+    }
 
-   }
+    .earthcontainer{
 
-   .aboutdescportrait{
-
-        display: flex;
-
-        width: 70%;
-
-        margin: 0 auto;
-
-        padding: 4dvw;
-
+        height: var(--about-height);
+        width: var(--first-section-width);
         justify-content: center;
-        align-items: center;
 
-   }
+    }
 
-   .aboutdescportrait p{
+    #earth{
 
-        font-size: 5dvw;
-        text-align: justify;
-        text-justify: inter-word;
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
 
-   }
+    }
 
-   .submitbutton button{
+    .earthbehindobject{
 
-        font-size: 2dvw;
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+        justify-content: center;
 
-   }
+    }
 
-   .navbar{
+    .aboutitle h1 {
 
-    display: grid;
+        font-size: 60px;
 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    }
 
-    justify-content: center;
-    align-items: center;
-    padding: 3dvw;
+    .aboutsectioncontainer {
 
-   }
+        gap: 30px;
 
-   .navbar h1{
-
-    font-size: 7dvw;
-    grid-row: 1;
-    grid-column: 2;
-    padding-left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-    padding-bottom: 3dvh;
-
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-
-    transition: 0.5s ease-out;
+    }
 
 }
 
-#responsivemenu{
+/* A bit bigger if you need some adjustments around here */
+@media (min-width: 1100px) {
 
-    display: flex;
-    transform: rotate(90deg);
-    font-size: 7dvw;
+    :root{
+
+        --about-height: 500px;
+        --earth-behind-object: 300px;
+        --first-section-width: 900px;
+    
+    }
+
+    .firstsection{
+
+        width: var(--first-section-width);
+
+    }
+
+    .earthcontainer{
+
+        height: var(--about-height);
+        width: var(--first-section-width);
+        justify-content: center;
+
+    }
+
+    #earth{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+
+    }
+
+    .earthbehindobject{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+        justify-content: center;
+
+    }
 
 }
 
-#home, #about{
-    font-size: 4dvw;
-}
+/* Widescreens */
+@media (min-width: 1500px) {
 
-.responsivemenu{
+    :root{
 
-    display: flex;
+        --headingsize: 30px;
+        --listing-and-button-size: 15px;
+        --button-height: 50px;
+        --button-width: 120px;
+        --about-height: 700px;
+        --earth-behind-object: 500px;
+        --first-section-width: 1200px;
+    
+    }
 
-}
+    .firstsection{
+
+        width: var(--first-section-width);
+
+    }
+
+    .navbar{
+
+        height: 150px;
+
+    }
+
+    .fheading h1{
+
+        font-size: 80px;
+
+    }
+
+    .aboutsection {
+
+        height: var(--about-height);
+
+    }
+
+    .earthcontainer{
+
+        height: var(--about-height);
+        width: var(--first-section-width);
+        justify-content: center;
+
+    }
+
+    #earth{
+
+        width: var(--earth-behind-object);
+        height: var(--earth-behind-object);
+
+    }
+
+    .earthbehindobject{
+
+        height: var(--earth-behind-object);
+        width: var(--earth-behind-object);
+        justify-content: center;
+
+    }
+
+    .aboutdesc p {
+
+        font-size: 30px;
+        
+    }
+
+    .aboutitle h1 {
+
+        font-size: 100px;
+
+    }
 
 }

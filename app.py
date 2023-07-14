@@ -119,16 +119,6 @@ def results():
 
         return render_template("/results.html", data=newdata, datakeys=datakeys, datavalues=datavalues)
 
-
-
-
-@app.route("/about", methods=["GET", "POST"])
-def about():
-
-    if request.method == "GET":
-
-        return render_template("/about.html")
-
 if __name__ == '__main__':
 
    app.run(debug=True)

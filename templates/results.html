@@ -1,91 +1,146 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block body %}
 
-{% block body %}
+<style>
 
-    <nav class="resultsnav">
+  *{
 
-        <nav class="resultsnavcontainer">
+    overflow: hidden;
 
-            <nav class="datacontent">
+  }
 
-                <p>{{ data }}</p>
+</style>
 
-            </nav>
+<nav class="earthcontainerresults">
 
-            <span class="fdash">
+  <model-viewer src="{{url_for('static', filename='assets/earth2.glb')}}" class="earthcontainerresults" id="earth"
+  environment-image="legacy" auto-rotate  
+  style="background-color: transparent; --progress-bar-height: 0;"></model-viewer>
 
-                <canvas  id="fdash">
+  <div class="earthbehindobjectresults"></div>
 
-                  <script>
+</nav>
 
-                    console.log({{ datakeys }})
 
-                    var xValues = {{ datakeys }};
-                    var yValues = {{ datavalues }};
-                    var barColors = [
-                      "#7a5af5",
-                    ];
+<nav class="firstsection">
 
-                    const fdash = document.getElementById("fdash").getContext("2d");
-                    const bgGradient = fdash.createLinearGradient(0, 0, 0, 400);
+  <nav class="navbarresults glassycontainer">
 
-                    bgGradient.addColorStop(0,"rgba(122, 90, 245, 1)")
-                    bgGradient.addColorStop(1,"rgba(122, 90, 245, 0.02)")
+    <h1><a href="/">Global Data</a></h1>
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                    new Chart(fdash, {
+    <div class="navlist" id="">
+      <ul class="">
+        <li class="" id="home">
+          <a class="" href="/">Home <span class="sr-only"></span></a>
+        </li>
+        <form action="/trycountries">
 
-                      type: "line",
-                      data: {
-                        labels: xValues,
-                        datasets: [{
-                          data: yValues,
-                          backgroundColor: bgGradient,
-                          borderColor: ['#7a5af5'],
-                          fill: true,
-                          color: ['#fffffff']
-                        }]
-                      },
+          <button type="submit" id="try">Try Again!</button>
 
-                      options: {
-                        title: {
-                          display: true,
-                          text: "World Wide Wine Production",
-                        },
+        </form>
+      </ul>
+      </form>
+    </div>
 
-                        plugins: {
-                          legend: {
-                            labels: {
-                              font: {
-                                color: "#ffffff"
-                              }
-                            },
-                            display: false
-                          }
-                        },
+  </nav>
 
-                        responsive: true,
+  <nav class="resultsnav">
+    <nav class="resultsnavcontainer ">
+      <span class="fdash glassycontainer">
+        <canvas id="fdash" style="height: 65dvh;">
+          <script>
 
-                        layout: {
-                            padding: 80
-                        },
+            console.log({{ datakeys }})
 
-                        maintainAspectRatio: true,
+            var xValues = {{ datakeys }};
+            var yValues = {{ datavalues }};
+            var barColors = [
+              "#7a5af5",
+            ];
 
-                        layout: {
-                            padding: 50
-                        }
+            const fdash = document.getElementById("fdash").getContext("2d");
+            const bgGradient = fdash.createLinearGradient(0, 0, 0, 400);
 
+            bgGradient.addColorStop(0,"rgba(122, 90, 245, 1)")
+            bgGradient.addColorStop(1,"rgba(122, 90, 245, 0.02)")
+
+            new Chart(fdash, {
+
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  data: yValues,
+                  backgroundColor: bgGradient,
+                  borderColor: ['#7a5af5'],
+                  fill: true,
+                  color: ['#fffffff']
+                }]
+              },
+
+              options: {
+                title: {
+                  display: true,
+                  text: "World Wide Wine Production",
+                },
+
+                plugins: {
+                  legend: {
+                    labels: {
+                      font: {
+                        color: "#ffffff"
                       }
-                    });
+                    },
+                    display: false
+                  }
+                },
 
-                  </script>
+                responsive: true,
 
-                </canvas>
+                layout: {
+                    padding: 80
+                },
 
-            </span>
+                maintainAspectRatio: false,
 
-        </nav>
+                layout: {
+                    padding: 50
+                }
 
+              }
+            });
+          </script>
+        </canvas>
+      </span>
     </nav>
+  </nav>
+</nav>
+
+<script>
+
+  addEventListener("DOMContentLoaded", (event) => {
+
+    ScrollReveal().reveal(".earthcontainerresults", {
+
+      origin: 'right',
+      distance: '50px',
+      duration: 5000,
+      reset: true
+
+    });
+
+    ScrollReveal().reveal(".earthbehindobjectresults", {
+
+      origin: 'right',
+      distance: '50px',
+      duration: 5000,
+      reset: true
+
+    });
+
+  });
+
+</script>
 
 {% endblock %}

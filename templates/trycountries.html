@@ -1,40 +1,25 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block body %}
 
-{% block body %}
+<span class="trybackground">
+  <span class="tryformcontainer glassycontainer">
+    <h1>Select Country:</h1>
 
-    <span class="trybackground">
+    <nav id="tryformcontainer">
+      <form method="POST" action="/trycountries">
+        <select name="selectedcountry">
+          {% for i in countries %}
 
-        <span class="tryformcontainer">
+          <option>{{ i }}</option>
 
-            <h1>Select Country:</h1>
+          {% endfor %}
+        </select>
 
-            <nav id="tryformcontainer">
-
-                <form method="POST" action="/trycountries">
-
-                    <select name="selectedcountry">
-
-                        {% for i in countries %}
-
-                            <option>{{ i }}</option>
-
-
-                        {% endfor %}
-
-                    </select>
-
-                    <nav class="submitbutton">
-
-                        <button type="submit">Next</button>
-
-                    </nav>
-
-                </form>
-
-            </nav>
-
-        </span>
-
-    </span>
+        <nav class="submitbutton">
+          <button type="submit">Next</button>
+        </nav>
+      </form>
+    </nav>
+  </span>
+</span>
 
 {% endblock %}
