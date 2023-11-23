@@ -7,10 +7,8 @@ import gdown
 ruta_archivo_local = 'WDI.db'
 
 if not os.path.exists(ruta_archivo_local):
-    url_archivo_drive = 'https://drive.google.com/uc?id=1zM2DSi0Wh5cNYmkxl4iffe1W_bBOiBlE'
+    url_archivo_drive = 'https://drive.usercontent.google.com/download?id=112-ox_3811pQ6KeiVTe8hq7scscsePFC&export=download&authuser=0&confirm=t&uuid=1a48ecf2-7652-446e-9cf1-decc37608413&at=APZUnTVa9PAmtDhUDzd9afz7Ye6v:1700775698277'
     gdown.download(url_archivo_drive, ruta_archivo_local, quiet=False)
-else:
-    print("El archivo ya existe localmente. No se realizará ninguna descarga.")
 
 
 app = Flask(__name__)
