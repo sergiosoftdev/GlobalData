@@ -1,5 +1,3 @@
-# CURRENTLY NOT WORKING DUE TO DATABASE ISSUES (Working on it...)
-
 # Global Data
 **Link:** https://globaldata.onrender.com. (It could take some time to load the page due to slow host services).
 
